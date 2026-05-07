@@ -1,0 +1,187 @@
+<!doctype html>
+ 
+<html lang="en"> 
+<head> 
+   <meta charset="utf-8">
+   <title> Accessibility exercise </title>
+</head>
+<body>
+  <header>
+    <h1> Accessibility exercises </h1>
+  </header>
+  <main>
+    <h2> ARIA exercise 1 (after) </h2>
+    
+    <form >
+          <fieldset>
+            <legend> Contact us </legend>
+            <div class="form-control">
+            <label for="name">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="5"></circle>
+                <path d="M20 21a8 8 0 0 0-16 0"></path>
+              </svg>
+              <span class="sr-only">Name</span>
+            </label>
+            <input id="name" name="name" type="text" />
+            </div>
+
+            <div class="form-control">
+              <label for="email"> 
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+                <rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                <span class="sr-only">Email</span>
+                </label>
+              <input
+                type="text"
+                id="email"
+              />
+            </div>
+
+            <div class="form-control">
+              <label for="message">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open">
+                <path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+                <span class="sr-only">Message</span>
+                </label>
+              <textarea
+                id="message"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn" aria-label="Send">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane-icon lucide-plane"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+            </button>
+        </fieldset>
+    </form>
+        <img alt="Phone" src="https://img.icons8.com/small/2x/phone.png"/> +52 (333) 45 34 567
+</main>
+</body>
+</html>
+
+<style>
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f8;
+  color: #333;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+h1 {
+  color: #2a9d8f;
+  margin-bottom: 20px;
+}
+
+/* Form container */
+form {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+}
+
+/* Fieldset and legend */
+fieldset {
+  border: 2px solid #2a9d8f;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: #264653;
+  padding: 0 10px;
+}
+
+/* Form controls */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #264653;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Inputs and textarea */
+input[type="text"],
+textarea {
+  padding: 10px;
+  border: 2px solid #757575;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #1E7167;
+  box-shadow: 0 0 5px rgba(42, 157, 143, 0.3);
+  outline: none;
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: #20796F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #21867a;
+}
+
+.submit-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Contact info */
+img {
+  vertical-align: middle;
+  width: 20px;
+  margin-right: 8px;
+  margin-top: 25px;
+}
+
+body > img + text,
+body > img + span,
+body > img + div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+</style>
